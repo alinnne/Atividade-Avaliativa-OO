@@ -31,7 +31,8 @@ case 0:
 
 break;
 case 1:
-echo "Inserindo....\n";
+echo"Deseja cadastrar que tipo de animal?\n";
+readline("1-Gato | 2-Cachorro  | 3-Porquinho da Índia \n");
 break;
 case 2:
 echo "Listando....\n";
