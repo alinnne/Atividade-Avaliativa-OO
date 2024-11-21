@@ -9,6 +9,19 @@ class Pet{
     protected $porte;
     protected int $idade;
 
+     public function __construct($nome,$Raca,$peso,$pelagem,$porte,$idade) {
+        $this->nome = $nome;
+        $this->Raca = $Raca;
+        $this->peso = $peso;
+        $this->pelagem = $pelagem;
+        $this->porte = $porte;
+        $this->idade = $idade;
+    }
+
+    public function __toString() {
+        return "Nome: $this->nome | Raça: $this->Raca\n";
+    }
+    
     /**
      * Get the value of nome
      */
