@@ -1,7 +1,7 @@
 <?php
 require_once("modelo/Cao.php");
-require_once("modelo/gato.php");
-require_once("modelo/pet.php");
+require_once("modelo/Gato.php");
+require_once("modelo/Pet.php");
 require_once("modelo/porquinhoDaIndia.php");
 
 $petsCadastrados = [];
@@ -112,22 +112,20 @@ do {
             } else
             echo "Escolha o número do pet para excluir:\n";
             foreach ($petsCadastrados as $index => $pet) {
-                // Exibe o nome do pet e o índice (como número para o usuário escolher)
-                echo "$index. Nome: " . $pet->getNome() . ", Tipo: " . get_class($pet) . "\n";
+                // Exibe o nome do pet e o índice 
+                echo $index + 1 . "-Nome: " . $pet->getNome() . ", Tipo: " . get_class($pet) . "\n";}
             $indicePet = readline("Digite o número do pet a ser excluído: ");
             
         
-            // Excluir o pet do array utilizando array_splice
-            $indicePet = readline("Digite o número do pet a ser excluído: ");
+            
+            //$indicePet = readline("Digite o número do pet a ser excluído: ");
 
         
                   // Excluir o pet do array utilizando array_splice
-                array_splice($petsCadastrados, $indicePet, 1);  
+                array_splice($petsCadastrados, $indicePet, -1);  
                 echo "Pet excluído com sucesso!\n";
-            } else {
-                echo "Índice inválido. Nenhum pet foi excluído.\n";
-            }
-        }
+            
+        
 
                 break;
 
@@ -136,6 +134,11 @@ do {
             break;
 
         default:
+            echo "Opção inválida. Tente novamente.\n";
+        }
+} while ($opcao != 5);
+
+
             echo "Opção inválida. Tente novamente.\n";
     }
 } while ($opcao != 5);
